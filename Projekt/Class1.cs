@@ -9,13 +9,13 @@ namespace ProjektInventory
     public class Spieler
     {
         //Eigenschaften Des Spielers
-        public string Name { get; set; }                // Name des Spielers
-        public string Klasse { get; set; }               //Charakterklasse des Spielers
+        public string Name { get;  }                // Name des Spielers
+        public string Klasse { get;  }               //Charakterklasse des Spielers
 
         //Attribute des Spielers
-        public int Staerke { get; set; }                // Stärke des Spielers
+        public int Staerke { get;  }                // Stärke des Spielers
 
-        public int Intelligenz { get; set; }            // Intelligenz des Spielers
+        public int Intelligenz { get;  }            // Intelligenz des Spielers
 
 
         //Konstruktor wird beötigt wenn neuer Spieler erstellt wird
@@ -26,17 +26,20 @@ namespace ProjektInventory
             Staerke = staerke;
             Intelligenz = intelligenz;
 
-            Console.WriteLine($"Ein neuer Spieler wurde ausgewählt:{Name} der Klasse {Klasse} (Stärke : {Staerke} % Intelligenz {Intelligenz})");
+            Console.WriteLine($"Ein neuer Spieler wurde ausgewählt:\n{Name} der Klasse {Klasse}, \n(Stärke : {Staerke},  \nIntelligenz {Intelligenz})");
         }
 
         //Methode für Spieler Infos
         
         public void SpielerInfo()
-            {
-            Console.WriteLine($"Name{Name }");
-            Console.WriteLine($"Klasse{Klasse}");
-            Console.WriteLine($"Stärke{Staerke}");
-            Console.WriteLine($"Intelligenz{Intelligenz}");
+        {
+            Console.WriteLine(@$"
+            Name:   {Name }
+            Klasse: {Klasse}
+            Stärke: {Staerke}
+            Intelligenz: {Intelligenz}");
+            
+            
         }
 
     }

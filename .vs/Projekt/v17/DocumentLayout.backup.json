@@ -26,9 +26,9 @@
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Class1.cs",
               "RelativeDocumentMoniker": "Projekt\\Class1.cs",
-              "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Class1.cs",
-              "RelativeToolTip": "Projekt\\Class1.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAjAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Class1.cs*",
+              "RelativeToolTip": "Projekt\\Class1.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA5wCQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T12:46:30.764Z",
               "EditorCaption": ""
@@ -43,8 +43,7 @@
               "RelativeToolTip": "Projekt\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T09:00:19.454Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T09:00:19.454Z"
             }
           ]
         }

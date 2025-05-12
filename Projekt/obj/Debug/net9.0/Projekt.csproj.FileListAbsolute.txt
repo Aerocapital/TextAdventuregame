@@ -1,0 +1,15 @@
+C:\Users\andre\source\repos\Projekt\Projekt\bin\Debug\net9.0\Projekt.exe
+C:\Users\andre\source\repos\Projekt\Projekt\bin\Debug\net9.0\Projekt.deps.json
+C:\Users\andre\source\repos\Projekt\Projekt\bin\Debug\net9.0\Projekt.runtimeconfig.json
+C:\Users\andre\source\repos\Projekt\Projekt\bin\Debug\net9.0\Projekt.dll
+C:\Users\andre\source\repos\Projekt\Projekt\bin\Debug\net9.0\Projekt.pdb
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\Projekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\Projekt.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\Projekt.AssemblyInfo.cs
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\Projekt.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\Projekt.sourcelink.json
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\Projekt.dll
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\refint\Projekt.dll
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\Projekt.pdb
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\Projekt.genruntimeconfig.cache
+C:\Users\andre\source\repos\Projekt\Projekt\obj\Debug\net9.0\ref\Projekt.dll

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\andre\\source\\repos\\Projekt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Class1.cs",
               "RelativeDocumentMoniker": "Projekt\\Class1.cs",
-              "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Class1.cs*",
-              "RelativeToolTip": "Projekt\\Class1.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA5wCQAAAAbAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Class1.cs",
+              "RelativeToolTip": "Projekt\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T12:46:30.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Program.cs",
               "RelativeDocumentMoniker": "Projekt\\Program.cs",
               "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Program.cs",
               "RelativeToolTip": "Projekt\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwDwAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T09:00:19.454Z"
+              "WhenOpened": "2025-05-09T09:00:19.454Z",
+              "EditorCaption": ""
             }
           ]
         }

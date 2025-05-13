@@ -13,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\spieler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\spieler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\scheresteinpapier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\scheresteinpapier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SchereSteinPapier.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\SchereSteinPapier.cs",
+              "RelativeDocumentMoniker": "Projekt\\SchereSteinPapier.cs",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\SchereSteinPapier.cs",
+              "RelativeToolTip": "Projekt\\SchereSteinPapier.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T16:40:57.782Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -32,7 +49,7 @@
               "RelativeDocumentMoniker": "Projekt\\R\u00E4ume.cs",
               "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\R\u00E4ume.cs",
               "RelativeToolTip": "Projekt\\R\u00E4ume.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowD0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwFoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-13T13:04:24.062Z",
               "EditorCaption": ""
@@ -45,7 +62,7 @@
               "RelativeDocumentMoniker": "Projekt\\Spieler.cs",
               "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Spieler.cs",
               "RelativeToolTip": "Projekt\\Spieler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwCcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T12:46:30.764Z",
               "EditorCaption": ""
@@ -58,7 +75,7 @@
               "RelativeDocumentMoniker": "Projekt\\Program.cs",
               "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Program.cs",
               "RelativeToolTip": "Projekt\\Program.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAgwBAAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAmwHQAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T09:00:19.454Z",
               "EditorCaption": ""

@@ -5,7 +5,7 @@ class Programm
 {
     static Spieler spielerCharakter;
 
-    
+
 
 
 
@@ -24,7 +24,7 @@ class Programm
         Console.WriteLine("Bevor das Abenteuer beginnt, wähle deine Helden: ");
 
         string ausgewaehlteKlasse = "Bauer";        //Standartklasse
-        int anfangsStaerke = 1;                //Standartstaerke
+        int anfangsStaerke = 1 ;                //Standartstaerke
         int anfangsIntelligenz = 1;            //Standartintelligenz
 
         bool charakterwahl = false;    // Variable für die Charakterwahl
@@ -35,7 +35,7 @@ class Programm
             Console.WriteLine("2. Magier");
             Console.WriteLine("3. Bauer");
             Console.WriteLine("Bitte gib die Nummer deiner Wahl ein: ");                //Nachträglich eingesetzt da schöner in der Konsole
-            string eingabe = Console.ReadLine();
+            string eingabe = Console.ReadLine()?? "";
             switch (eingabe)
             {
                 case "1":
@@ -60,96 +60,113 @@ class Programm
                     Console.WriteLine("Ungültige Eingabe, bitte wähle eine gültige Klasse");
                     break;
             }
-            
-        }
-        Console.WriteLine($"\nDu hast dich fpr {ausgewaehlteKlasse} entschieden");
+            Console.WriteLine("Bitte nenne mir deinen Namen, Held von Ozelot: ");
 
-        Console.WriteLine("Bitte nenne mir deinen Namen, Held von Ozelot: ");
+            string spielerName = Console.ReadLine()?? "";
 
-        string spielerName = Console.ReadLine();
-
-        if (string.IsNullOrEmpty(spielerName))              
-        {
-            Console.WriteLine($"Du bist fortan bekannt als {spielerName} );");
-            spielerName = "Helz von Ozelot"; // Standardname                        //Dies hat Grok verbessert
-        }
-
-        // --- Spieler-Objekt erstellen ---
-        // Jetzt erstellen wir das Spieler-Objekt mit den gesammelten Infos
-        spielerCharakter = new Spieler(spielerName, ausgewaehlteKlasse, anfangsStaerke, anfangsIntelligenz);
-
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("\nDein Abenteuer in Azeria beginnt, Held!");
-        Console.ResetColor();
-        Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine($"\nDu hast dich fpr {ausgewaehlteKlasse} entschieden");
 
 
-        
-        //Haupotschleife
 
-        while (true)                    //Läuft bis breat oder return
-        { 
-        Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("---Modrige Höhle---");
+
+
+            //if (string.IsNullOrEmpty(spielerName))              
+            //{
+            //   Console.WriteLine($"Du bist fortan bekannt als {spielerName} );");
+            // spielerName = "Held von Ozelot"; // Standardname                        //Dies hat Grok verbessert
+            //}
+
+            // --- Spieler-Objekt erstellen ---
+            // Jetzt erstellen wir das Spieler-Objekt mit den gesammelten Infos
+            //spielerCharakter = new Spieler(spielerName,usgewaehlteKlasse , anfangsStaerke, anfangsIntelligenz);
+            spielerCharakter = new Spieler(spielerName, ausgewaehlteKlasse, anfangsStaerke , anfangsIntelligenz );
+
+            // --- Raum erstellen ---
+            Raum modrigeHoehle = new Raum("Modrige Höhle", "Eine dunkle und modrige Höhle, die nach Oma riecht.");
+            Raum verlasseneRuine = new Raum("Verlassene Ruine", "Eine alte Ruine, die von der Natur zurückerobert wurde.");
+            Raum geheimnisvollerWald = new Raum("Geheimnisvoller Wald", "Ein dichter Wald, in dem die Bäume flüstern.");
+
+            //Räume verbinden
+            modrigeHoehle.FuegeAusgangHinzu("links", verlasseneRuine);
+            modrigeHoehle.FuegeAusgangHinzu("rechts", geheimnisvollerWald);
+
+            verlasseneRuine.FuegeAusgangHinzu("rechts", modrigeHoehle);
+            geheimnisvollerWald.FuegeAusgangHinzu("links", verlasseneRuine);
+
+            // --- Spieler in den Raum setzen ---
+            spielerCharakter.AktuellerOrt = modrigeHoehle; // Spieler in die modrige Höhle setzen
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\nDein Abenteuer in Azeria beginnt, Held!");
             Console.ResetColor();
-            Console.WriteLine("Du bist in einer modrigen Höhle, die Wände sind feucht und es riecht nach Oma.");
-            Console.WriteLine("Vor dir siehst du einen Weg, der nach links und einen nach rechts führt.");
-
-            Console.WriteLine("Was möchtest du tun?");
-            Console.WriteLine("1. Nach links gehen");
-            Console.WriteLine("2. Nach rechts gehen");
-            Console.WriteLine("3. Geradeaus gehen");
-            string befehl = Console.ReadLine();
-            befehl = befehl.ToLower().Trim();              // nachträglich geändert da sonst immmr eingabefehler gehabt
+            Console.WriteLine("--------------------------------------------------");
 
 
-            //Befehl verarbeiten, mit platzhalter da morgen inventar etc
-            switch (befehl)
+
+            //Haupotschleife
+
+            while (true)                    //Läuft bis break oder return
             {
-                case "quit":
-                case "beenden":                             //wenn man keine Bock mehr hat
-                    Console.WriteLine("Wenn du beendest, stirbst du, willst du sterben = (ja/nein) ");
-                    string sicherheit = Console.ReadLine().ToLower().Trim();
-                    if (sicherheit == "ja" || sicherheit == "j")
-                    {
-                        Console.WriteLine("Du elende Pfeife lässt alle im Stich");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine(spielerCharakter.AktuellerOrt);
+                Console.ResetColor();
+                Console.WriteLine("Du bist in einer modrigen Höhle, die Wände sind feucht und es riecht nach Oma.");
+                Console.WriteLine("Vor dir siehst du einen Weg, der nach links und einen nach rechts führt.");
+
+                Console.WriteLine("Was möchtest du tun?");
+                Console.WriteLine("1. Nach links gehen");
+                Console.WriteLine("2. Nach rechts gehen");
+
+                string befehl = Console.ReadLine();
+                befehl = befehl.ToLower().Trim();              // nachträglich geändert da sonst immmr eingabefehler gehabt
+
+
+                //Befehl verarbeiten, mit platzhalter da morgen inventar etc
+                switch (befehl)
+                {
+                    case "quit":
+                    case "beenden":                             //wenn man keine Bock mehr hat
+                        Console.WriteLine("Wenn du beendest, stirbst du, willst du sterben = (ja/nein) ");
+                        string sicherheit = Console.ReadLine().ToLower().Trim();
+                        if (sicherheit == "ja" || sicherheit == "j")
+                        {
+                            Console.WriteLine("Du elende Pfeife lässt alle im Stich");
                             return;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Auch wahren Helden geht anfangs die Muffe");
-                    }
-                    break;
-                case "status":                              //zeigt Spielerstatus
-                    spielerCharakter.ZeigeStatus();
-                    break; 
-                case "inventar":                            //zeigt Inventar, Inventarliste wird noch erstellt
-                    Console.WriteLine("Dein rucksack beinhaltet:");
-                    break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Auch wahren Helden geht anfangs die Muffe");
+                        }
+                        break;
+                    case "status":                              //zeigt Spielerstatus
+                        spielerCharakter.ZeigeStatus();
+                        break;
+                    case "inventar":                            //zeigt Inventar, Inventarliste wird noch erstellt
+                        Console.WriteLine("Dein rucksack beinhaltet:");
+                        break;
 
-                case "schere stein papier":                 //Minispiel
-                    Console.WriteLine();
-                    break;
+                    case "schere stein papier":                 //Minispiel
+                        Console.WriteLine();
+                        break;
 
-                default:
-                    Console.WriteLine("Was soll dieser Befehl bedeuten?");
-                    break;
+                    default:
+                        Console.WriteLine("Was soll dieser Befehl bedeuten?");
+                        break;
+                }
 
 
 
-                   
             }
         }
-
-
     }
+
+}
+    
    
 
     
   
     
-    }
-
     
 
-}
+    

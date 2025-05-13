@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projekt;
+using SimpleInventory;
 
-namespace ProjektInventory
+namespace SimpleInventory
 {
     public class Spieler
     {
         //Eigenschaften Des Spielers
-        public string Name { get;  }                // Name des Spielers
-        public string Klasse { get;  }               //Charakterklasse des Spielers
+        public string Name { get; }                // Name des Spielers
+        public string Klasse { get; }               //Charakterklasse des Spielers
 
         //Attribute des Spielers
-        public int Staerke { get;  }                // Stärke des Spielers
+        public int Staerke { get; }                // Stärke des Spielers
 
-        public int Intelligenz { get;  }            // Intelligenz des Spielers
+        public int Intelligenz { get; }             // Intelligenz des Spielers
+
+        public Raum AktuellerOrt { get; set; }           //Neue Eigenschaft, der Raum in dem sich der spieler grad befindet
+                                                         //Public damit Main sie lesen und ändern kann, daher auch set;
 
 
         //Konstruktor wird beötigt wenn neuer Spieler erstellt wird
@@ -30,17 +35,33 @@ namespace ProjektInventory
         }
 
         //Methode für Spieler Infos
-        
+
         public void SpielerInfo()
         {
             Console.WriteLine(@$"
-            Name:   {Name }
+            Name:   {Name}
             Klasse: {Klasse}
             Stärke: {Staerke}
             Intelligenz: {Intelligenz}");
-            
-            
-        }
 
+
+        }
+        public void ZeigeStatus()
+        {
+            Console.WriteLine($"Name: {Name}, Klasse: {Klasse}, Stärke: {Staerke}, Intelligenz: {Intelligenz}");
+        }
+        
+
+        
+       
     }
+
+    
+    
+
+    
+
+
 }
+
+

@@ -1,8 +1,14 @@
-﻿using ProjektInventory;
+﻿using SimpleInventory;
+using Projekt;
 
 class Programm
 {
     static Spieler spielerCharakter;
+
+    
+
+
+
     static void Main(string[] args)
     {
         Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -51,7 +57,7 @@ class Programm
                     charakterwahl = true;
                     break;
                 default:
-                    Console.WriteLine("Ungültige Eingabe, bitte wähle eine gültige Klasse.");
+                    Console.WriteLine("Ungültige Eingabe, bitte wähle eine gültige Klasse");
                     break;
             }
             
@@ -62,10 +68,10 @@ class Programm
 
         string spielerName = Console.ReadLine();
 
-        if (string.IsNullOrEmpty(spielerName))              //IsnullorEMpty vorgabe von visual studio
+        if (string.IsNullOrEmpty(spielerName))              
         {
             Console.WriteLine($"Du bist fortan bekannt als {spielerName} );");
-            spielerName = "Helz von Ozelot"; // Standardname
+            spielerName = "Helz von Ozelot"; // Standardname                        //Dies hat Grok verbessert
         }
 
         // --- Spieler-Objekt erstellen ---
@@ -78,5 +84,72 @@ class Programm
         Console.WriteLine("--------------------------------------------------");
 
 
+        
+        //Haupotschleife
+
+        while (true)                    //Läuft bis breat oder return
+        { 
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("---Modrige Höhle---");
+            Console.ResetColor();
+            Console.WriteLine("Du bist in einer modrigen Höhle, die Wände sind feucht und es riecht nach Oma.");
+            Console.WriteLine("Vor dir siehst du einen Weg, der nach links und einen nach rechts führt.");
+
+            Console.WriteLine("Was möchtest du tun?");
+            Console.WriteLine("1. Nach links gehen");
+            Console.WriteLine("2. Nach rechts gehen");
+            Console.WriteLine("3. Geradeaus gehen");
+            string befehl = Console.ReadLine();
+            befehl = befehl.ToLower().Trim();              // nachträglich geändert da sonst immmr eingabefehler gehabt
+
+
+            //Befehl verarbeiten, mit platzhalter da morgen inventar etc
+            switch (befehl)
+            {
+                case "quit":
+                case "beenden":                             //wenn man keine Bock mehr hat
+                    Console.WriteLine("Wenn du beendest, stirbst du, willst du sterben = (ja/nein) ");
+                    string sicherheit = Console.ReadLine().ToLower().Trim();
+                    if (sicherheit == "ja" || sicherheit == "j")
+                    {
+                        Console.WriteLine("Du elende Pfeife lässt alle im Stich");
+                            return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Auch wahren Helden geht anfangs die Muffe");
+                    }
+                    break;
+                case "status":                              //zeigt Spielerstatus
+                    spielerCharakter.ZeigeStatus();
+                    break; 
+                case "inventar":                            //zeigt Inventar, Inventarliste wird noch erstellt
+                    Console.WriteLine("Dein rucksack beinhaltet:");
+                    break;
+
+                case "schere stein papier":                 //Minispiel
+                    Console.WriteLine();
+                    break;
+
+                default:
+                    Console.WriteLine("Was soll dieser Befehl bedeuten?");
+                    break;
+
+
+
+                   
+            }
+        }
+
+
     }
+   
+
+    
+  
+    
+    }
+
+    
+
 }

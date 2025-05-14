@@ -19,8 +19,10 @@ namespace SimpleInventory
 
         public int Intelligenz { get; }             // Intelligenz des Spielers
 
-        public Raum AktuellerOrt { get; set; }           //Neue Eigenschaft, der Raum in dem sich der spieler grad befindet
-                                                         //Public damit Main sie lesen und ändern kann, daher auch set;
+        public int AktuelleEbene { get; set; }          // 1 für Ebene1 2 für Ebene 2
+        public int AktuellerRaumNummer { get; set; }   
+        
+        
 
 
         //Konstruktor wird beötigt wenn neuer Spieler erstellt wird
@@ -44,16 +46,24 @@ namespace SimpleInventory
             Stärke: {Staerke}
             Intelligenz: {Intelligenz}");
 
+            AktuelleEbene = 1;                  // Setze die aktuelle Ebene auf 1
+            AktuellerRaumNummer = 1;            // Setze den aktuellen Raum auf 1
+
 
         }
         public void ZeigeStatus()
         {
             Console.WriteLine($"Name: {Name}, Klasse: {Klasse}, Stärke: {Staerke}, Intelligenz: {Intelligenz}");
         }
-        
 
-        
-       
+        // ToString() Methode für Statusanzeige
+        public override string ToString()
+        {
+            return $"Name: {Name}\nKlasse: {Klasse}\nAttribute: \nStärke={Staerke}, \nIntelligenz={Intelligenz}\nFortschritt: Ebene {AktuelleEbene}, Raum {AktuellerRaumNummer}";
+        }
+
+
+
     }
 
     

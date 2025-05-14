@@ -1,11 +1,12 @@
 ﻿using SimpleInventory;
 using Projekt;
+using System.Runtime.CompilerServices;
 
 class Programm
 {
     static Spieler spielerCharakter;
 
-
+    Spieler spieler = null;
 
 
 
@@ -64,101 +65,74 @@ class Programm
 
             string spielerName = Console.ReadLine()?? "";
 
-            Console.WriteLine($"\nDu hast dich fpr {ausgewaehlteKlasse} entschieden");
+            Console.WriteLine($"\nDu hast dich für {ausgewaehlteKlasse} entschieden");
+
+            Spieler spielerCharakter = new Spieler(spielerName, ausgewaehlteKlasse, anfangsStaerke, anfangsIntelligenz); // Erstelle ein Spieler-Objekt mit den gewählten Eigenschaften
 
 
 
-
-
-            //if (string.IsNullOrEmpty(spielerName))              
-            //{
-            //   Console.WriteLine($"Du bist fortan bekannt als {spielerName} );");
-            // spielerName = "Held von Ozelot"; // Standardname                        //Dies hat Grok verbessert
-            //}
-
-            // --- Spieler-Objekt erstellen ---
-            // Jetzt erstellen wir das Spieler-Objekt mit den gesammelten Infos
-            //spielerCharakter = new Spieler(spielerName,usgewaehlteKlasse , anfangsStaerke, anfangsIntelligenz);
-            spielerCharakter = new Spieler(spielerName, ausgewaehlteKlasse, anfangsStaerke , anfangsIntelligenz );
-
-            // --- Raum erstellen ---
-            Raum modrigeHoehle = new Raum("Modrige Höhle", "Eine dunkle und modrige Höhle, die nach Oma riecht.");
-            Raum verlasseneRuine = new Raum("Verlassene Ruine", "Eine alte Ruine, die von der Natur zurückerobert wurde.");
-            Raum geheimnisvollerWald = new Raum("Geheimnisvoller Wald", "Ein dichter Wald, in dem die Bäume flüstern.");
-
-            //Räume verbinden
-            modrigeHoehle.FuegeAusgangHinzu("links", verlasseneRuine);
-            modrigeHoehle.FuegeAusgangHinzu("rechts", geheimnisvollerWald);
-
-            verlasseneRuine.FuegeAusgangHinzu("rechts", modrigeHoehle);
-            geheimnisvollerWald.FuegeAusgangHinzu("links", verlasseneRuine);
-
-            // --- Spieler in den Raum setzen ---
-            spielerCharakter.AktuellerOrt = modrigeHoehle; // Spieler in die modrige Höhle setzen
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\nDein Abenteuer in Azeria beginnt, Held!");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("=====DEIN ABENTEUER VON OZELOT BEGINNT=====");
             Console.ResetColor();
-            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine();
+
+            bool ebene1Erfolgreich = false;  // Flag für den Erfolg der ersten Ebene
+
+            bool spielLaeuft = true;          // Flag für den Spielstatus
+
+            // Start Ebene 1 ---
+
+            spielerCharakter.AktuelleEbene = 1;
+            spielerCharakter.AktuellerRaumNummer = 1;
+            Ebene1 ebene1 = new Ebene1(spielerCharakter);               // Erstelle ein Objekt der Klasse Ebene1
+            
+            ebene1Erfolgreich = ebene1.SpieleEbene();                   //gibt true zurück, wenn Ebene 1 geschafft/beendet ist, false bei 'quit'.
 
 
-
-            //Haupotschleife
-
-            while (true)                    //Läuft bis break oder return
+            if (ebene1Erfolgreich && spielerCharakter.AktuellerRaumNummer > 3)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(spielerCharakter.AktuellerOrt);
-                Console.ResetColor();
-                Console.WriteLine("Du bist in einer modrigen Höhle, die Wände sind feucht und es riecht nach Oma.");
-                Console.WriteLine("Vor dir siehst du einen Weg, der nach links und einen nach rechts führt.");
+                Console.WriteLine("\nDu hast Ebene 1 gemeistert! Du steigst tiefer in den Berg.");
+                
+                spielerCharakter.AktuelleEbene = 2;                     // Setze Spieler auf Startposition für Ebene 2
+                spielerCharakter.AktuellerRaumNummer = 1;               // Setze Spieler auf Raum 1 von Ebene 2
 
-                Console.WriteLine("Was möchtest du tun?");
-                Console.WriteLine("1. Nach links gehen");
-                Console.WriteLine("2. Nach rechts gehen");
+                // Starte Ebene 2
+                Ebene2 ebene2 = new Ebene2(spielerCharakter);           // Erstelle ein Objekt der Klasse Ebene2
+                bool ebene2Erfolgreich = ebene2.SpieleEbene();          // wenn true läuft Spiel weiter
 
-                string befehl = Console.ReadLine();
-                befehl = befehl.ToLower().Trim();              // nachträglich geändert da sonst immmr eingabefehler gehabt
-
-
-                //Befehl verarbeiten, mit platzhalter da morgen inventar etc
-                switch (befehl)
+                
+                
+                if (ebene2Erfolgreich && spielerCharakter.AktuellerRaumNummer > 3)
                 {
-                    case "quit":
-                    case "beenden":                             //wenn man keine Bock mehr hat
-                        Console.WriteLine("Wenn du beendest, stirbst du, willst du sterben = (ja/nein) ");
-                        string sicherheit = Console.ReadLine().ToLower().Trim();
-                        if (sicherheit == "ja" || sicherheit == "j")
-                        {
-                            Console.WriteLine("Du elende Pfeife lässt alle im Stich");
-                            return;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Auch wahren Helden geht anfangs die Muffe");
-                        }
-                        break;
-                    case "status":                              //zeigt Spielerstatus
-                        spielerCharakter.ZeigeStatus();
-                        break;
-                    case "inventar":                            //zeigt Inventar, Inventarliste wird noch erstellt
-                        Console.WriteLine("Dein rucksack beinhaltet:");
-                        break;
-
-                    case "schere stein papier":                 //Minispiel
-                        Console.WriteLine();
-                        break;
-
-                    default:
-                        Console.WriteLine("Was soll dieser Befehl bedeuten?");
-                        break;
+                    Console.WriteLine("Du hast auch Ebene 2 gemeistert!");
+                    Console.WriteLine("Dein Abenteuer in Ozelot ist vorerst abgeschlossen."); // Platzhalter
+                    spielLaeuft = false; // Spielende nach Ebene 2
                 }
-
-
-
+                else
+                {
+                    
+                    Console.WriteLine("Du hast Ebene 2 nicht gemeistert! Spiel Ende");         //// Ebene 2 nicht erfolgreich (quit) oder frühzeitig beendet
+                    spielLaeuft = false; 
+                }
             }
-        }
+            else
+            {
+                
+                Console.WriteLine("Das Spiel wird beendet.");
+                spielLaeuft = false; 
+            }
+
+
+            
+            Console.WriteLine("\nDas Abenteuer endet hier. Drücke eine Taste zum Schließen.");
+            Console.ReadKey();
+
+
+           
+
+        } 
     }
+    
 
 }
     

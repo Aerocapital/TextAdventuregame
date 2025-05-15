@@ -7,20 +7,28 @@
       "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\spieler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\spieler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\ebene1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\ebene1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\ebene2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\ebene2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\scheresteinpapier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\scheresteinpapier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\heiltrank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\heiltrank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\gegenstand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\gegenstand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\spieler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\spieler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|c:\\users\\andre\\source\\repos\\projekt\\projekt\\ebene2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C4BB0B9-4167-4034-9528-0B31AB2F3F2A}|Projekt\\Projekt.csproj|solutionrelative:projekt\\ebene2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,24 +38,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Heiltrank.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Heiltrank.cs",
+              "RelativeDocumentMoniker": "Projekt\\Heiltrank.cs",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Heiltrank.cs",
+              "RelativeToolTip": "Projekt\\Heiltrank.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:50:36.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Gegenstand.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Gegenstand.cs",
+              "RelativeDocumentMoniker": "Projekt\\Gegenstand.cs",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Gegenstand.cs",
+              "RelativeToolTip": "Projekt\\Gegenstand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:46:47.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Ebene2.cs",
               "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Ebene2.cs",
               "RelativeDocumentMoniker": "Projekt\\Ebene2.cs",
               "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Ebene2.cs",
               "RelativeToolTip": "Projekt\\Ebene2.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAqwGwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAUwFcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T08:51:46.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "SchereSteinPapier.cs",
               "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\SchereSteinPapier.cs",
               "RelativeDocumentMoniker": "Projekt\\SchereSteinPapier.cs",
@@ -60,26 +94,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Ebene1.cs",
               "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Ebene1.cs",
               "RelativeDocumentMoniker": "Projekt\\Ebene1.cs",
               "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Ebene1.cs",
               "RelativeToolTip": "Projekt\\Ebene1.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowLUAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwIoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-13T13:04:24.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Spieler.cs",
               "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Spieler.cs",
               "RelativeDocumentMoniker": "Projekt\\Spieler.cs",
               "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Spieler.cs",
               "RelativeToolTip": "Projekt\\Spieler.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA9wDIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T12:46:30.764Z",
               "EditorCaption": ""
@@ -92,7 +126,7 @@
               "RelativeDocumentMoniker": "Projekt\\Program.cs",
               "ToolTip": "C:\\Users\\andre\\source\\repos\\Projekt\\Projekt\\Program.cs",
               "RelativeToolTip": "Projekt\\Program.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAgwEUAAAC3AAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwE0AAACeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T09:00:19.454Z",
               "EditorCaption": ""

@@ -65,20 +65,18 @@ class Programm
 
             string spielerName = Console.ReadLine()?? "";
 
-            Console.WriteLine($"\nDu hast dich für {ausgewaehlteKlasse} entschieden");
-
             Spieler spielerCharakter = new Spieler(spielerName, ausgewaehlteKlasse, anfangsStaerke, anfangsIntelligenz); // Erstelle ein Spieler-Objekt mit den gewählten Eigenschaften
 
-
+            Console.WriteLine($"\nDu hast dich für {ausgewaehlteKlasse} entschieden");
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("=====DEIN ABENTEUER VON OZELOT BEGINNT=====");
             Console.ResetColor();
             Console.WriteLine();
 
-            bool ebene1Erfolgreich = false;  // Flag für den Erfolg der ersten Ebene
+            bool ebene1Erfolgreich = false;         //Falso, wenn Ebene 1 nicht erfolgreich abgeschlossen wurde (quit) oder vorzeitig beendet
+            bool spielLaeuft = true;                // Spiel läuft solange bis der Spieler quit eingibt oder die Ebene 2 nicht erfolgreich abgeschlossen wurde
 
-            bool spielLaeuft = true;          // Flag für den Spielstatus
 
             // Start Ebene 1 ---
 
@@ -105,7 +103,7 @@ class Programm
                 if (ebene2Erfolgreich && spielerCharakter.AktuellerRaumNummer > 3)
                 {
                     Console.WriteLine("Du hast auch Ebene 2 gemeistert!");
-                    Console.WriteLine("Dein Abenteuer in Ozelot ist vorerst abgeschlossen."); // Platzhalter
+                    Console.WriteLine("Dein Abenteuer in Ozelot ist vollendet."); // Platzhalter
                     spielLaeuft = false; // Spielende nach Ebene 2
                 }
                 else

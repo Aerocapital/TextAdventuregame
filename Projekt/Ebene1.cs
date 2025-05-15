@@ -18,6 +18,8 @@ namespace Projekt
         // Eine Referenz auf das Spieler-Objekt.
         public Spieler spieler;
 
+        public bool kisteInRaum2Geoeffnet = false;
+
         // Konstruktor: Eine Ebene braucht das Spieler-Objekt.
         public Ebene1(Spieler aktuellerSpieler)
         {
@@ -53,14 +55,23 @@ namespace Projekt
                 
                 Console.WriteLine("\nWas möchtest du tun?");
                 Console.WriteLine("1. Raum betreten"); 
-                
+                Console.WriteLine("2. Inventar anzeigen"); 
                 Console.WriteLine("3. Status anzeigen");
-                Console.WriteLine("4. Ebene beenden (Frühzeitig)");             // Klarstellen, dass es frühzeitig ist
+
+                //Option Kiste einfügen
+                if (spieler.AktuellerRaumNummer == 2 && !kisteInRaum2Geoeffnet) // Wenn Spieler im Raum 2 ist und die Kiste noch nicht geöffnet wurde
+                {
+                    Console.WriteLine("4. Kiste öffnen");
+                }
+
+                Console.WriteLine("5. Ebene beenden (Frühzeitig)");             // Klarstellen, dass es frühzeitig ist
                 Console.WriteLine("quit (Spiel komplett beenden)"); 
 
-                Console.Write("Bitte wähle eine Option (1, 3, 4 oder 'quit'): "); 
-                string eingabe = Console.ReadLine() ?? "";                      // Eingabe lesen
-                eingabe = eingabe.ToLower().Trim();                             // Eingabe formatieren, dass immer alles klein geschrieben wird bei der Eingabe
+                
+
+                Console.WriteLine("Bitte wähle eine Option (1, 3, 4 oder 'quit'): "); 
+                string eingabe = Console.ReadLine().ToLower().Trim() ?? "";                      // Eingabe lesen
+                                           
 
                 switch (eingabe)
                 {
@@ -85,19 +96,43 @@ namespace Projekt
                         break; 
 
                     case "2":                                                               // Raum verlassen 
-                       
-                        Console.WriteLine("In dieser Ebene kannst du nicht zurückgehen oder den Raum auf diese Weise verlassen.");
-                        Console.ResetColor();
-                        break; 
+
+                        spieler.ZeigeInventar(); 
+                        break;
+                         
 
                     case "3":      
                                                                                 // Status anzeigen
                         Console.WriteLine("\n--- Charakterstatus ---");
                         Console.WriteLine(spieler);                         // Ruft spieler.ToString() auf
                         Console.ResetColor();
-                        break; 
+                        break;
 
-                    case "4":                                                           // Ebene frühzeitig beenden
+                    case "4":
+                        if (spieler.AktuellerRaumNummer == 2 && !kisteInRaum2Geoeffnet)
+                        {
+                            Console.WriteLine("Eine rostige Kiste steht mitten im Raum");
+
+                            Console.WriteLine("\n Möchtest du Sie öffnen? (ja/nein)");
+                            string kisteOeffnen = Console.ReadLine()?.ToLower().Trim() ?? ""; // Eingabe lesen und formatieren
+
+                            if (kisteOeffnen == "ja")
+                            {
+                                Heiltrank gefundenerTrank = new Heiltrank("Heiltrank", "Ein Trank, der deine Gesundheit wiederherstellt.", 20); // Erstelle einen neuen Heiltrank
+
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("Du öffnest die Kiste und findest einen Heiltrank");
+                                Console.ResetColor();
+
+                                spieler.GegenstandHinzufuegen(gefundenerTrank); // Füge den Heiltrank dem Inventar des Spielers hinzu
+
+                                kisteInRaum2Geoeffnet = true; // Setze die Kiste als geöffnet
+                            }
+                            else { Console.WriteLine("Du gehst an der Kiste vorbei"); }     //Kiste wird nicht geöffnet
+                        }
+                        break;
+
+                    case "5":                                                           // Ebene frühzeitig beenden
                         Console.WriteLine("Möchtest du Ebene 1 wirklich frühzeitig beenden? (ja/nein)");
                         string sicherheit = Console.ReadLine()?.ToLower().Trim() ?? "";
                         if (sicherheit == "ja" || sicherheit == "j")

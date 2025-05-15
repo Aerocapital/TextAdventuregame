@@ -10,22 +10,26 @@ namespace SimpleInventory
 {
     public class Spieler
     {
-        //Eigenschaften Des Spielers
-        public string Name { get; }                // Name des Spielers
-        public string Klasse { get; }               //Charakterklasse des Spielers
-
-        //Attribute des Spielers
-        public int Staerke { get; }                // Stärke des Spielers
-
-        public int Intelligenz { get; }             // Intelligenz des Spielers
-
-        public int AktuelleEbene { get; set; }          // 1 für Ebene1 2 für Ebene 2
-        public int AktuellerRaumNummer { get; set; }   
         
+        public string Name { get; }
+        public string Klasse { get; }
+
         
+        public int Staerke { get; }
+        public int Intelligenz { get; }
+
+        
+        public int AktuelleEbene { get; set; }
+        public int AktuellerRaumNummer { get; set; }
+
+        // Das Inventar des Spielers.
+        // Eine Liste von Gegenstand-Objekten. Da Heiltrank von Gegenstand erbt,
+        
+        public List<Gegenstand> Inventar { get; } 
 
 
-        //Konstruktor wird beötigt wenn neuer Spieler erstellt wird
+        // --- Konstruktor ---
+        // Wird beim Erstellen des Spieler-Objekts aufgerufen.
         public Spieler(string name, string klasse, int staerke, int intelligenz)
         {
             Name = name;
@@ -33,43 +37,62 @@ namespace SimpleInventory
             Staerke = staerke;
             Intelligenz = intelligenz;
 
-            Console.WriteLine($"Ein neuer Spieler wurde ausgewählt:\n{Name} der Klasse {Klasse}, \n(Stärke : {Staerke},  \nIntelligenz {Intelligenz})");
+            //  Start von Ebene 1, Raum 1
+            AktuelleEbene = 1;
+            AktuellerRaumNummer = 1;
+
+            
+            Inventar = new List<Gegenstand>(); 
         }
 
-        //Methode für Spieler Infos
+        
 
-        public void SpielerInfo()
+       
+        public void GegenstandHinzufuegen(Gegenstand item)
         {
-            Console.WriteLine(@$"
-            Name:   {Name}
-            Klasse: {Klasse}
-            Stärke: {Staerke}
-            Intelligenz: {Intelligenz}");
-
-            AktuelleEbene = 1;                  // Setze die aktuelle Ebene auf 1
-            AktuellerRaumNummer = 1;            // Setze den aktuellen Raum auf 1
-
-
+            Inventar.Add(item); // Fügt den Gegenstand dem Inventar des Spielers hinzu
+            Console.ForegroundColor = ConsoleColor.Blue; 
+            Console.WriteLine($"{Name} hat '{item.Name}' zum Inventar hinzugefügt."); // Nutzt item.Name (geerbte Eigenschaft)
+            Console.ResetColor();
         }
-        public void ZeigeStatus()
+
+        // Methode, um das Inventar anzuzeigen.
+        public void ZeigeInventar()
         {
-            Console.WriteLine($"Name: {Name}, Klasse: {Klasse}, Stärke: {Staerke}, Intelligenz: {Intelligenz}");
+            Console.WriteLine($"\n--- Inventar von {Name} ---"); 
+            if (Inventar.Count == 0)
+            {
+                Console.WriteLine("Dein Rucksack ist leer."); 
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow; 
+                foreach (Gegenstand item in Inventar)
+                {
+                    // Ruft item.ToString() auf )
+                    Console.WriteLine($" {item}");
+                }
+                Console.ResetColor(); 
+            }
+           
+
         }
 
-        // ToString() Methode für Statusanzeige
+
+        
         public override string ToString()
         {
-            return $"Name: {Name}\nKlasse: {Klasse}\nAttribute: \nStärke={Staerke}, \nIntelligenz={Intelligenz}\nFortschritt: Ebene {AktuelleEbene}, Raum {AktuellerRaumNummer}";
+            
+            return $"Name: {Name}\nKlasse: {Klasse}\nAttribute: \nStärke={Staerke}, \nIntelligenz={Intelligenz}\nFortschritt: Ebene {AktuelleEbene}, Raum {AktuellerRaumNummer}\nInventarplätze: {Inventar.Count}";
         }
 
-
-
+        
     }
 
-    
-    
 
-    
+
+
+
 
 
 }

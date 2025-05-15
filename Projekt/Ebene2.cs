@@ -12,6 +12,8 @@ namespace Projekt
     {
         public Spieler spieler;
 
+        
+
         public Ebene2(Spieler aktuellerSpieler)
         {
             spieler = aktuellerSpieler;
@@ -64,7 +66,9 @@ namespace Projekt
                         }
                         break;
                     case "2":                  //inventar kommt noch
-                        spieler.SpielerInfo();
+                        Console.WriteLine("\n--- Charakterstatus ---");
+                        Console.WriteLine(spieler);                         // Ruft spieler.ToString() auf
+                        Console.ResetColor();
                         break;
                     case "3":
                         Console.WriteLine("===STATUS===");

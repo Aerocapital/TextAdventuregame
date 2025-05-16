@@ -31,7 +31,7 @@ namespace Projekt
         
         public bool SpieleEbene()
         {
-            Console.ForegroundColor = ConsoleColor.Green; 
+            Console.ForegroundColor = ConsoleColor.Red; 
             Console.WriteLine("=====BETRITT EBENE 1====="); 
             Console.WriteLine("Das Abenteuer beginnt"); 
             Console.ResetColor();
@@ -57,20 +57,21 @@ namespace Projekt
                 Console.WriteLine("1. Raum betreten"); 
                 Console.WriteLine("2. Inventar anzeigen"); 
                 Console.WriteLine("3. Status anzeigen");
+                Console.WriteLine("4. Ebene beenden (Frühzeitig)");
 
                 //Option Kiste einfügen
                 if (spieler.AktuellerRaumNummer == 2 && !kisteInRaum2Geoeffnet) // Wenn Spieler im Raum 2 ist und die Kiste noch nicht geöffnet wurde
                 {
-                    Console.WriteLine("4. Kiste öffnen");
+                    Console.WriteLine("5. Kiste öffnen");
                 }
 
-                Console.WriteLine("5. Ebene beenden (Frühzeitig)");             // Klarstellen, dass es frühzeitig ist
+                            // Klarstellen, dass es frühzeitig ist
                 Console.WriteLine("quit (Spiel komplett beenden)"); 
 
                 
 
-                Console.WriteLine("Bitte wähle eine Option (1, 3, 4 oder 'quit'): "); 
-                string eingabe = Console.ReadLine().ToLower().Trim() ?? "";                      // Eingabe lesen
+                Console.WriteLine("Bitte wähle eine Option (1, 2 , 3, 4, 5 oder 'quit'): "); 
+                string eingabe = Console.ReadLine() ?? "".ToLower().Trim() ;                      
                                            
 
                 switch (eingabe)
@@ -87,10 +88,9 @@ namespace Projekt
                         }
                         else
                         {
-                            // Spieler ist bereits im letzten Raum
-                            
-                            Console.WriteLine("Du kannst von hier aus nicht weiter gehen. Erkunde deine Umgebung oder beende die Ebene (Option 4)."); // Angepasster Text
-                            Console.ResetColor();
+                            spieler.AktuellerRaumNummer++; 
+                            Console.WriteLine("Du gehst weiter... Ein bedrohlicher Schatten liegt vor dir!");
+                            Console.ResetColor(); 
 
                         }
                         break; 
@@ -108,7 +108,21 @@ namespace Projekt
                         Console.ResetColor();
                         break;
 
-                    case "4":
+                    case "4":                                                           // Ebene frühzeitig beenden
+                        Console.WriteLine("Möchtest du Ebene 1 wirklich frühzeitig beenden? (ja/nein)");
+                        string sicherheit = Console.ReadLine()?.ToLower().Trim() ?? "";
+                        if (sicherheit == "ja" || sicherheit == "j")
+                        {
+                            Console.WriteLine("Du verlässt Ebene 1.");
+                            return true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Du bleibst auf Ebene 1.");
+                        }
+                        break;
+
+                    case "5":
                         if (spieler.AktuellerRaumNummer == 2 && !kisteInRaum2Geoeffnet)
                         {
                             Console.WriteLine("Eine rostige Kiste steht mitten im Raum");
@@ -124,7 +138,7 @@ namespace Projekt
                                 Console.WriteLine("Du öffnest die Kiste und findest einen Heiltrank");
                                 Console.ResetColor();
 
-                                spieler.GegenstandHinzufuegen(gefundenerTrank); // Füge den Heiltrank dem Inventar des Spielers hinzu
+                                spieler.GegenstandHinzufuegen(gefundenerTrank); // Füge Heiltrank dem Inventar des Spielers hinzu
 
                                 kisteInRaum2Geoeffnet = true; // Setze die Kiste als geöffnet
                             }
@@ -132,19 +146,7 @@ namespace Projekt
                         }
                         break;
 
-                    case "5":                                                           // Ebene frühzeitig beenden
-                        Console.WriteLine("Möchtest du Ebene 1 wirklich frühzeitig beenden? (ja/nein)");
-                        string sicherheit = Console.ReadLine()?.ToLower().Trim() ?? "";
-                        if (sicherheit == "ja" || sicherheit == "j")
-                        {
-                            Console.WriteLine("Du verlässt Ebene 1.");
-                            return true; 
-                        }
-                        else
-                        {
-                            Console.WriteLine("Du bleibst auf Ebene 1.");
-                        }
-                        break; 
+                   
 
                     case "quit":                                                                // Spiel komplett beenden
                         Console.WriteLine("Möchtest du das Spiel komplett beenden? (ja/nein)");
@@ -168,7 +170,7 @@ namespace Projekt
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("Ungültige Eingabe. Bitte wähle eine Nummer aus dem Menü oder tippe 'quit'.");
                         Console.ResetColor();
-                        break; //
+                        break; 
                 } 
 
                 
@@ -180,17 +182,78 @@ namespace Projekt
             Console.ResetColor();
 
             
-            Console.WriteLine("Du erreichst das Ende von Ebene 1 und triffst auf einen Gegner!");
-            // Hier wird das Schere-Stein-Papier Minispiel aufgerufen 
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\nVor dir steht der Endboss ");
+            Console.WriteLine("Ein bestialisches Wesen versperrt dir den Weg");
+            Console.ResetColor();
 
-            return true; // Gibt true zurück, Ebene 1 erfolgreich 
+            bool endbossBesiegt = false;                // Variable für den Endboss
+            while (!endbossBesiegt)
+            {
+                Console.WriteLine("\nWas möchtest du tun?");
+                Console.WriteLine("1. Spiele gegen den Endboss(Schere,Stein,Papier)");
+                Console.WriteLine("2. Flüchte vor dem Endgegner und verliere das Abenteuer");
+
+                string endboss = Console.ReadLine() ?? ""; 
+                switch(endboss)
+                {
+                    case "1":
+                        
+                        Console.WriteLine("\nDu stellst dich dem Endgegner im ultimativen Duell: Schere, Stein, Papier!");
+                        bool spielerGewinntMinispiel = SchereSteinPapier.SpieleSchereSteinPapier(); 
+                        
+                        if (spielerGewinntMinispiel)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("\nDu hast den Endgegner im Schere, Stein, Papier besiegt!");
+                            Console.ResetColor();
+                            spieler.AktuelleEbene = 2; 
+                            spieler.AktuellerRaumNummer = 1; 
+                            endbossBesiegt = true; 
+                            return true; 
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nDer Endgegner hat dich im Schere, Stein, Papier besiegt!");
+                            Console.ResetColor();
+                            
+                            spieler.AktuelleEbene = 0;
+                            spieler.AktuellerRaumNummer = 0;
+                            endbossBesiegt = true; 
+                            return false; 
+                        }
+                    
+
+                    case "2":
+                        
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\nDu drehst dich um und flüchtest feige vor dem Endgegner!");
+                        Console.ResetColor();
+                        
+                        spieler.AktuelleEbene = 0;
+                        spieler.AktuellerRaumNummer = 0;
+                        endbossBesiegt = true; 
+                        return false; 
+
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Ungültige Eingabe. Wähle 1 oder 2.");
+                        Console.ResetColor();
+                        break;
+                }
+                
+            }
+            return false;
+
+
         } 
 
-        // Private Methode, um die Beschreibung basierend auf der Raum-Nummer anzuzeigen.
+        
         
         private void ZeigeRaumBeschreibung(int raumNummer)
         {
-            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             
             Console.WriteLine($"\n--- Ebene 1, Raum {raumNummer} ---");
             Console.ResetColor();
@@ -198,18 +261,24 @@ namespace Projekt
             switch (raumNummer)
             {
                 case 1:
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine("Du betrittst eine feuchte Höhle. Es riecht nach Moos.");
                     
                     Console.WriteLine("Wenn du weiter gehst, wird es modriger und dunkler, sodass es schwerer wird, dich zurechtzufinden.");
+                    Console.ResetColor();
                     break;
                 case 2:
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine("Der Gang wird enger und dunkler. Seltsame Geräusche sind zun hören.");
                     
                     Console.WriteLine("Wenn du weiter gehst, wird es noch modriger und dunkler, sodass es noch schwerer wird, dich zurechtzufinden.");
+                    Console.ResetColor();
                     break;
                 case 3:
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine("Du kriechst durch einen sehr engen Tunnel. Die Luft ist stickig. Vor dir siehst du ein schwaches Licht.");
                     Console.WriteLine("Dies scheint der letzte Raum von Ebene 1 zu sein."); 
+                    Console.ResetColor();
                     break;
                 default:
                    
@@ -220,6 +289,6 @@ namespace Projekt
             }
         }
 
-        // Später kommen hier Methoden für den Endgegner etc.
+        
     } 
 } 

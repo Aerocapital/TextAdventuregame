@@ -69,7 +69,7 @@ class Programm
 
             Console.WriteLine($"\nDu hast dich für {ausgewaehlteKlasse} entschieden");
 
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("=====DEIN ABENTEUER VON OZELOT BEGINNT=====");
             Console.ResetColor();
             Console.WriteLine();

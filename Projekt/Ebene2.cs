@@ -24,7 +24,7 @@ namespace Projekt
         //true wenn Ebene 2 abgeshclossen
         public bool SpieleEbene()
         { 
-        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("=====BETRITT EBENE 2=====");
             Console.WriteLine("Du bist in der zweiten Ebene angekommen");
             Console.ResetColor();
@@ -65,7 +65,7 @@ namespace Projekt
                             Console.ResetColor();
                         }
                         break;
-                    case "2":                  //inventar kommt noch
+                    case "2":                  
                         Console.WriteLine("\n--- Charakterstatus ---");
                         Console.WriteLine(spieler);                         // Ruft spieler.ToString() auf
                         Console.ResetColor();
@@ -79,7 +79,7 @@ namespace Projekt
                         return false; // Beende die Ebene vorzeitig
                     case "quit":
                         Console.WriteLine("Möchtest du das spiel wirklich beenden? (ja/nein)");
-                        string spielQuit = Console.ReadLine().ToLower().Trim();
+                        string spielQuit = Console.ReadLine()?? "".ToLower().Trim();
                         if (spielQuit == "ja")
                         {
                             Console.WriteLine("Das Spiel wird beendet. Auf Wiedersehen!");
@@ -93,7 +93,7 @@ namespace Projekt
 
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Ungültige Eingabe, tippe (´1´, ´2´,´3´,´4´ oder ´quit´) ");
+                        Console.WriteLine("Ungültige Eingabe, tippe (1, 2 ,3 , 4 oder quit) ");
                         Console.ResetColor();
                         break;
                 }
